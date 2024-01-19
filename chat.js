@@ -27,7 +27,7 @@ const chat = () => {
     const history = [
         {
             role: 'system',
-            content: 'You are an AI assistant. Answer your questions using pirate speak.'
+            content: 'You are an AI assistant. Answer your questions to the best of your ability.'
         },
     ]
 
@@ -42,13 +42,13 @@ const chat = () => {
             const response = await newMessage(history, message)
 
             history.push(message, response)
-            console.log(`\n\nAI: ${response.content}\n\n`)
+            console.log(`\n\nAI: ${response.content}`)
             start()
         })
     }
 
     start()
-    console.log(`\n\nAI: How can I help you today?\n\n`)
+    console.log(`\n\nAI: How can I help you today?`)
 }
 
 console.log('Chatbot initialized. Type "exit" to end the chat.')
