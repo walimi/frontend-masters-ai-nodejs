@@ -13,7 +13,10 @@
   "dependencies": {
     "@langchain/openai": "^0.0.12",
     "dotenv": "^16.3.1",
-    "langchain": "^0.1.4",
-    "openai": "^4.24.3"
+    "langchain": "^0.0.170",
+    "openai": "^4.24.3",
+    "pdf-parse": "^1.1.1",
+    "youtube-transcript": "^1.0.6",
+    "youtubei.js": "^5.8.0"
   }
 }
