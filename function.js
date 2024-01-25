@@ -19,6 +19,11 @@ const functions = {
     }, 
     whoIsWahidAlimi( { expression }) {
         return 'Wahid Alimi is a Sr. Manager of Application Development working at Akin Gump.'
+    }, 
+    async generateImage({ prompt }) {
+        const result = await openai.images.generate({ prompt }) // this is called within a while which causes a race condition        
+        console.log(result)
+        return ''
     }
 }
 
@@ -56,6 +61,20 @@ const getCompletion = (message) => {
                         }
                     }, 
                     required: ['expression']
+                }
+            },
+            {
+                name: 'generateImage', 
+                description: 'Create or generate an image based on a description',
+                parameters: {
+                    type: 'object', 
+                    properties: {
+                        prompt: {
+                            type: 'string', 
+                            description: 'The description of the image to generate. '
+                        }
+                    }, 
+                    required: ['prompt']
                 }
             }
         ]
