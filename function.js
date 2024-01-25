@@ -16,6 +16,9 @@ const messages = [
 const functions = {
     calculate({ expression }) {        
         return math.evaluate(expression)
+    }, 
+    whoIsWahidAlimi( { expression }) {
+        return 'Wahid Alimi is a Sr. Manager of Application Development working at Akin Gump.'
     }
 }
 
@@ -39,6 +42,20 @@ const getCompletion = (message) => {
                     },
                     required: ['expression']  
                     
+                }
+            }, 
+            {
+                name: 'whoIsWahidAlimi', 
+                description: 'Who is Wahid Alimi',
+                parameters: {
+                    type: 'object', 
+                    properties: {
+                        expression: {
+                            type: 'string', 
+                            description: 'Who is Wahid Alimi'
+                        }
+                    }, 
+                    required: ['expression']
                 }
             }
         ]
